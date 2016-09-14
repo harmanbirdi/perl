@@ -45,7 +45,7 @@ sub balanced {
         } else {
             my $pop_char = pop(@stack);
 
-            if ((($chars[$i] eq ')') and $pop_char ne '(')) {
+            if (($pop_char ne '(') and ($chars[$i] eq ')')) {
                 return 0;
             }
 
@@ -64,7 +64,7 @@ sub balanced {
 #
 # Main starts here
 #
-my @arr = ('(())', '(()(', '()()()()', '()(())');
+my @arr = ('(())', '(()(', '()()()()', '()(())', '(', '');
 
 foreach my $str (@arr) {
     if (balanced($str)) {

@@ -41,9 +41,9 @@ sub balanced {
         } else {
             my $pop_char = pop(@stack);
 
-            if ((($chars[$i] eq ')') and $pop_char ne '(') or
-                (($chars[$i] eq ']') and $pop_char ne '[') or
-                (($chars[$i] eq '}') and $pop_char ne '{')) {
+            if (($pop_char ne '(') and ($chars[$i] eq ')') or
+                ($pop_char ne '[') and ($chars[$i] eq ']') or
+                ($pop_char ne '{') and ($chars[$i] eq '}')) {
                 return 0;
             }
         }
