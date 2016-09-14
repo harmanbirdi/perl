@@ -11,10 +11,6 @@
 #               Please note that brackets that are mix of adjacent and nested
 #               will NOT return as balanced like ()(())
 #
-#               Finally, this likely is NOT the best solution. Best solution
-#               would also cover the mixed case, but that was not explicitly
-#               asked for or stated in the problem statement.
-#
 #               The solution does NOT make any difference from the previous one
 #               which had additional types of brackets. It works exactly as the
 #               last one though the code to check for additional types of
@@ -25,59 +21,45 @@ use strict;
 use warnings FATAL => 'all';
 
 #
-# Subroutine to checks for adjacent pair of parenthesis where only characters next
-# to each other are complementary. It return 0 for FALSE, else return 1 for TRUE.
+#  This subroutine checks if the brackets are balanced and returns 0 for FALSE
+#  else it returns 1 for TRUE.
 #
-sub adjacent {
-    my @chars = split('', $_[0]);
+sub balanced {
+    my @chars = split('', $_[0]); # Create queue of the string characters
     my @stack = ();
 
-    foreach my $char (@chars) {
-        if (scalar @stack == 0) {
-            push(@stack, $char);
-        } elsif (scalar @stack == 1) {
-            my $pop_char = pop(@stack);
-            if (($char eq '(' and $pop_char ne ')')) {
-                return 0;
-            }
-        }
-    }
-
-    return 1;
-}
-
-#
-# Subroutine to checks for nested pair of parenthesis where the innermost
-# characters would be matching braces, followed by next set moving outwards.
-#
-sub nested {
-    my @queue = split('', $_[0]); # Create queue of the string characters
-    my @stack = ();
-
-    if (scalar(@queue) % 2 != 0) {
+    # If length is odd, return 0
+    if (scalar(@chars) % 2 != 0) {
         return 0;
     }
 
-    @stack = reverse(@queue); # Creates its stack by reversing the string
-
-    # Compare first element of queue and see if its complementary character
-    # is NOT part of the stack at same position for all elements. If so,
-    # return 0 for FALSE, else return 1 for TRUE when the loop finishes.
-    for (my $i = 0 ; $i < scalar @queue; $i++) {
-        if (($queue[$i] eq '(' and $stack[$i] ne ')')) {
+    # Check if brackets are balanced
+    for (my $i = 0; $i < scalar @chars; $i++) {
+        # If first character is from closing brackets, return 0
+        if (($i == 0) and ($chars[$i] eq ')')) {
             return 0;
         }
+
+        if (($chars[$i] eq '(')) {
+            push(@stack, $chars[$i]);
+        } else {
+            my $pop_char = pop(@stack);
+
+            if ((($chars[$i] eq ')') and $pop_char ne '(')) {
+                return 0;
+            }
+
+        }
+    }
+
+    # If stack is not empty after the loop completes, return 0
+    if (scalar @stack != 0) {
+        return 0;
     }
 
     return 1;
 }
 
-#
-# Subroutine to return 0 for FALSE or 1 for TRUE is the brackets are balanced.
-#
-sub balanced {
-    return (nested($_[0]) or adjacent($_[0]));
-}
 
 #
 # Main starts here
