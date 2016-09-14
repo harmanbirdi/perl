@@ -2,26 +2,22 @@ MacBook-Pro:perl hbirdi$ perl q1_histogram.pl "Mississippi borders Tennessee."
 s : #######
 e : #####
 i : ####
-r : ##
-n : ##
-  : ##
 p : ##
-d : #
-b : #
-M : #
-T : #
-. : #
+  : ##
+n : ##
+r : ##
 o : #
-MacBook-Pro:perl hbirdi$ 
-MacBook-Pro:perl hbirdi$ 
+T : #
+b : #
+. : #
+d : #
+M : #
 MacBook-Pro:perl hbirdi$ perl q2_names.pl 
 6 Miller, Thomas
 6 Garcia, William
 5 Davis, Elizabeth
 5 O'Day, James
 2 Li, Mary
-MacBook-Pro:perl hbirdi$ 
-MacBook-Pro:perl hbirdi$ 
 MacBook-Pro:perl hbirdi$ perl q3_balanced.pl 
 String '({[]})|' is NOT balanced.
 String '({[]})' is balanced.
@@ -29,16 +25,14 @@ String '[]{}' is balanced.
 String '([])' is balanced.
 String '([)]' is NOT balanced.
 String '](){' is NOT balanced.
-String '([]{})' is NOT balanced.
-MacBook-Pro:perl hbirdi$ 
-MacBook-Pro:perl hbirdi$ 
+String '([]{})' is balanced.
+String '{[({}[])]}' is balanced.
+String '(()(' is NOT balanced.
 MacBook-Pro:perl hbirdi$ perl q4_balanced.pl 
 String '(())' is balanced.
 String '(()(' is NOT balanced.
 String '()()()()' is balanced.
-String '()(())' is NOT balanced.
-MacBook-Pro:perl hbirdi$ 
-MacBook-Pro:perl hbirdi$ 
+String '()(())' is balanced.
 MacBook-Pro:perl hbirdi$ perl q5_strip.pl 
 ------------
 INPUT STRING
@@ -73,3 +67,4 @@ OUTPUT STRING
 }
 
 MacBook-Pro:perl hbirdi$ 
+
