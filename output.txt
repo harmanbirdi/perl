@@ -2,16 +2,16 @@ MacBook-Pro:perl hbirdi$ perl q1_histogram.pl "Mississippi borders Tennessee."
 s : #######
 e : #####
 i : ####
+r : ##
+n : ##
 p : ##
   : ##
-n : ##
-r : ##
-o : #
-T : #
-b : #
 . : #
+T : #
 d : #
+o : #
 M : #
+b : #
 MacBook-Pro:perl hbirdi$ perl q2_names.pl 
 6 Miller, Thomas
 6 Garcia, William
@@ -33,6 +33,8 @@ String '(())' is balanced.
 String '(()(' is NOT balanced.
 String '()()()()' is balanced.
 String '()(())' is balanced.
+String '(' is NOT balanced.
+String '' is balanced.
 MacBook-Pro:perl hbirdi$ perl q5_strip.pl 
 ------------
 INPUT STRING
