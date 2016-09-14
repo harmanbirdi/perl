@@ -1,0 +1,75 @@
+MacBook-Pro:perl hbirdi$ perl q1_histogram.pl "Mississippi borders Tennessee."
+s : #######
+e : #####
+i : ####
+r : ##
+n : ##
+  : ##
+p : ##
+d : #
+b : #
+M : #
+T : #
+. : #
+o : #
+MacBook-Pro:perl hbirdi$ 
+MacBook-Pro:perl hbirdi$ 
+MacBook-Pro:perl hbirdi$ perl q2_names.pl 
+6 Miller, Thomas
+6 Garcia, William
+5 Davis, Elizabeth
+5 O'Day, James
+2 Li, Mary
+MacBook-Pro:perl hbirdi$ 
+MacBook-Pro:perl hbirdi$ 
+MacBook-Pro:perl hbirdi$ perl q3_balanced.pl 
+String '({[]})|' is NOT balanced.
+String '({[]})' is balanced.
+String '[]{}' is balanced.
+String '([])' is balanced.
+String '([)]' is NOT balanced.
+String '](){' is NOT balanced.
+String '([]{})' is NOT balanced.
+MacBook-Pro:perl hbirdi$ 
+MacBook-Pro:perl hbirdi$ 
+MacBook-Pro:perl hbirdi$ perl q4_balanced.pl 
+String '(())' is balanced.
+String '(()(' is NOT balanced.
+String '()()()()' is balanced.
+String '()(())' is NOT balanced.
+MacBook-Pro:perl hbirdi$ 
+MacBook-Pro:perl hbirdi$ 
+MacBook-Pro:perl hbirdi$ perl q5_strip.pl 
+------------
+INPUT STRING
+------------
+// this is a comment
+/////// this is a comment too
+{ // another comment
+/////////////
+   true, "foo", // 3rd comment
+   "http://www.ariba.com" // comment after URL
+   "http://www.yahoo.com"// no space between text and comment after URL
+   "https://www.google.com"//no space between text and comment after URL
+   "https://www.google.com?ex=1" //no space between text and comment after URL
+// This is a test http://www.pulse.com
+   "more than 2 slashes" ///// more than 2 slash comment
+}
+
+-------------
+OUTPUT STRING
+-------------
+
+
+{ 
+
+   true, "foo", 
+   "http://www.ariba.com" 
+   "http://www.yahoo.com"
+   "https://www.google.com"
+   "https://www.google.com?ex=1" 
+
+   "more than 2 slashes" 
+}
+
+MacBook-Pro:perl hbirdi$ 
